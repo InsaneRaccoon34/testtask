@@ -1,6 +1,20 @@
+import { Key } from "react";
+import JobCard from "../components/jobCard";
 
-export default function JobList() {
-    return(
-        <div className="text-3xl font-bold underline">JobList placeholder</div>
+// @ts-ignore
+const JobList = ({jobs}) => {
+
+    console.log(jobs)
+    return (
+        <div className='flex flex-col items-center gap-y-2'>
+            {jobs.map((job: { id: Key | null | undefined; }) => (
+                <JobCard
+                    key={job.id}
+                    job={job}
+                />
+            ))}
+        </div>
     )
 }
+
+export default JobList;
