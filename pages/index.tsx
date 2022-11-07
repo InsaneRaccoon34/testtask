@@ -28,7 +28,7 @@ const Home = ( {jobs} ) => {
             <Head>
                 <title>Jobs</title>
             </Head>
-            <div className='py-7'>
+            <div className='py-7 font-nunito'>
             <JobList jobs={jobs}/>
             </div>
 
