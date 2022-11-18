@@ -1,17 +1,17 @@
-import { Key } from "react";
 import JobCard from "../components/jobCard";
-
-// @ts-ignore
+import Link from "next/link";
 const JobList = ({jobs}) => {
 
-    console.log(jobs)
     return (
-        <div className='flex flex-col items-center'>
-            {jobs.map((job: { id: Key | null | undefined; }) => (
-                <JobCard
-                    key={job.id}
-                    job={job}
-                />
+        <div className='flex flex-col m-auto justify-center w-11/12 md:w-3/4'>
+            {jobs.map((job) => (
+                <Link key={job.id} href={`/jobDetails/${job.id}`} className='mb-2'>
+                    <JobCard
+                        key={job.id}
+                        job={job}
+                    />
+                </Link>
+
             ))}
         </div>
     )

@@ -13,14 +13,13 @@ export const getStaticProps: GetStaticProps = async () => {
             'Authorization': `Bearer ${TOKEN}`
         }
     })
-    const data = await res.json();
+    const data:Array<Object> = await res.json();
     return{
         props: { jobs: data }
     }
 }
 
 
-// @ts-ignore
 const Home = ( {jobs} ) => {
 
     return(
@@ -29,9 +28,8 @@ const Home = ( {jobs} ) => {
                 <title>Jobs</title>
             </Head>
             <div className='py-7 font-nunito'>
-            <JobList jobs={jobs}/>
+                <JobList jobs={jobs}/>
             </div>
-
         </div>
     )
 }
